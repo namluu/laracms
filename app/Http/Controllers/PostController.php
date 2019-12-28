@@ -36,7 +36,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post;
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->user_id = 1;
+        $post->category_id = 1;
+        $post->save();
+        if ($post) {
+            return redirect('posts');
+        }
     }
 
     /**
@@ -47,7 +55,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
