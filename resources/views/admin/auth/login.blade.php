@@ -4,9 +4,10 @@
     <title>Admin Login</title>
     <style>
         form { margin: 100px auto; width: 300px; }
-        label { margin-bottom: 10px; display: inline-block; }
-        input { width: 100%; padding: 5px; margin-bottom: 20px;}
+        input { width: 100%; padding: 5px; margin-top: 10px;}
         button { padding: 5px 30px; }
+        .form-group { margin-bottom: 15px;  }
+        .invalid-feedback { color: red; }
     </style>
 </head>
 <body>
