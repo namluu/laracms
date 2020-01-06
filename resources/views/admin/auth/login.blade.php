@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <style>
+        form { margin: 100px auto; width: 300px; }
+        label { margin-bottom: 10px; display: inline-block; }
+        input { width: 100%; padding: 5px; margin-bottom: 20px;}
+        button { padding: 5px 30px; }
+    </style>
+</head>
+<body>
+
 <form method="POST" action="{{ route("admin.login") }}">
     @csrf
 
@@ -37,3 +50,6 @@
         </div>
     </div>
 </form>
+
+</body>
+</html>
