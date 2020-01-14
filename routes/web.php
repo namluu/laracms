@@ -25,6 +25,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
         Route::post('/logout','LoginController@logout')->name('logout');
     });
     Route::get('/dashboard','HomeController@index')->name('home')->middleware('auth:admin');
+    Route::resource('/cms/categories','CategoryController')->middleware('auth:admin');
 });
 
 Auth::routes();
