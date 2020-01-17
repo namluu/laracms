@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>{{ config('app.name', 'Laravel') }} @if(View::hasSection('title')) - @yield('title')@endif</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
@@ -15,8 +17,11 @@
     @include('includes.nav-admin')
     @include('includes.flash-message-admin')
 
-    <main role="main">@yield('content')</main>
-    <footer>footer</footer>
+    <main role="main" class="mb-4">@yield('content')</main>
+    <footer class="mb-4">
+        <hr/>
+        <div class="text-center">© LaraCMS 2020. All rights reserved</div>
+    </footer>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
