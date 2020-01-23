@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'New Category')
+@section('title', 'Edit Category')
 
 @section('content')
 
@@ -20,20 +20,21 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.categories.store') }}" method="POST">
+    <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
         @csrf
+        @method('PATCH')
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control col-md-6" id="name">
+            <input type="text" name="name" class="form-control col-md-6" id="name" value="{{ $category->name }}">
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="is_active" id="categoryActive" value="1" checked>
+            <input class="form-check-input" type="radio" name="is_active" id="categoryActive" value="1" {{ $category->is_active == 1 ? 'checked' : '' }}>
             <label class="form-check-label" for="categoryActive">
                 Active
             </label>
         </div>
         <div class="form-group form-check">
-            <input class="form-check-input" type="radio" name="is_active" id="categoryInactive" value="0">
+            <input class="form-check-input" type="radio" name="is_active" id="categoryInactive" value="0" {{ $category->is_active == 0 ? 'checked' : '' }}>
             <label class="form-check-label" for="categoryInactive">
                 Inactive
             </label>
