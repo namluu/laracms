@@ -18,7 +18,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ url('/admin/cms/categories') }}">Categories</a>
-                    <a class="dropdown-item" href="#">Post</a>
+                    <a class="dropdown-item" href="{{ url('/admin/cms/posts') }}">Posts</a>
                 </div>
             </li>
         </ul>

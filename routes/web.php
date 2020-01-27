@@ -26,6 +26,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     });
     Route::get('/dashboard','HomeController@index')->name('home')->middleware('auth:admin');
     Route::resource('/cms/categories','CategoryController')->middleware('auth:admin');
+    Route::resource('/cms/posts','PostController')->middleware('auth:admin');
 });
 
 Auth::routes();

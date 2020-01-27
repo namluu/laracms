@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('body');
             $table->boolean('is_active')->default('1');
-            $table->bigInteger('user_id');
+            $table->bigInteger('admin_id');
             $table->bigInteger('category_id');
             $table->timestamps();
         });
