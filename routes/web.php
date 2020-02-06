@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::resource('posts', 'PostController');
 
@@ -30,4 +28,5 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 });
 
 Auth::routes();
-#Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/home', 'HomeController@index')->name('home');
