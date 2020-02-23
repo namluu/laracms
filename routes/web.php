@@ -12,9 +12,12 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'PostController');
+Route::resource('categories', 'CategoryController');
 
+// admin
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::namespace('Auth')->group(function(){
         //Login Routes
@@ -29,4 +32,4 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
