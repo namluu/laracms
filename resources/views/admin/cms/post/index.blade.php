@@ -25,8 +25,8 @@
                 <th>{{ $post->id }}</th>
                 <td><a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->title }}</a></td>
                 <td>{{ $post->is_active }}</td>
-                <td>{{ $post->category->name }}</td>
-                <td>{{ $post->admin->name }}</td>
+                <td>{{ $post->category_name }}</td>
+                <td>{{ $post->admin_name }}</td>
                 <td>{{ $post->created_at }}</td>
                 <td>
                     <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary btn-sm float-left mr-2">Edit</a>

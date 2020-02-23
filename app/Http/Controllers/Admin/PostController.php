@@ -9,6 +9,11 @@ use Auth;
 
 class PostController extends \App\Http\Controllers\Controller
 {
+    public function __construct(
+        Post $post
+    ) {
+        $this->post = $post;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,8 @@ class PostController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
-        $posts = Post::get();
+        //$posts = Post::get();
+        $posts = $this->post->getAll();
         return view('admin.cms.post.index', compact('posts'));
     }
 
